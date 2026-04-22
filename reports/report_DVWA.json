@@ -1,0 +1,4056 @@
+{
+    "metadata": {
+        "project": "DVWA",
+        "timestamp": "2026-04-18T05:30:15.069763+00:00",
+        "scanner": "Auditor Core Enterprise",
+        "integrity_hash": "18da38d8ff725b0123cc0a258a84c39a9d7a789e7a215cd3a51abd01542bef8f",
+        "total_reported": 45,
+        "reported_count": 45,
+        "overall_risk": "CRITICAL",
+        "risk_summary": "Immediate remediation required: Critical vulnerabilities detected.",
+        "credibility_score": 100,
+        "credibility_status": "CALIBRATED_v2.2",
+        "gate_override": true
+    },
+    "summary": {
+        "decision": "FAIL",
+        "rationale": "SPI 87.9 (Hardened (CORE_GATE_FAILURE)). K-eff: 162.9. Top Risks: SAST_COMMAND_INJECTION, SAST_XSS, generic-api-key.",
+        "stats": {
+            "CRITICAL": 15,
+            "HIGH": 18,
+            "MEDIUM": 5,
+            "LOW": 7,
+            "INFO": 0
+        }
+    },
+    "findings": [
+        {
+            "id": "3aa6cc8c-13ae-44eb-b6c3-923ec48cc64b",
+            "rule_id": "SECRET_GENERIC_SECRET",
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "database/create_sqlite_db.sql",
+            "line": 21,
+            "column": null,
+            "description": "Potential secret pattern matched: generic_secret",
+            "cvss": 0.47,
+            "detector": "SecretDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "SETUP",
+                "detector_severity": "LOW",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 0.5,
+                "original_cvss": 7.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-798"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.7",
+                        "title": "Data Transmission Protection",
+                        "description": "Protect against unauthorized data disclosure in transit."
+                    },
+                    {
+                        "id": "C1.1",
+                        "title": "Confidentiality Identification",
+                        "description": "Identify and maintain confidentiality of information."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.11",
+                        "title": "Encrypt Sensitive Data at Rest",
+                        "description": "Encrypt sensitive data stored on systems."
+                    },
+                    {
+                        "id": "CIS-4.7",
+                        "title": "Manage Default Accounts",
+                        "description": "Manage default accounts on enterprise assets."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.5.17",
+                        "title": "Authentication Information",
+                        "description": "Manage authentication credentials securely."
+                    },
+                    {
+                        "id": "A.8.12",
+                        "title": "Data Leakage Prevention",
+                        "description": "Prevent unauthorized disclosure of sensitive data."
+                    },
+                    {
+                        "id": "A.8.24",
+                        "title": "Use of Cryptography",
+                        "description": "Define and implement rules for cryptographic controls."
+                    }
+                ],
+                "risk_note": "Credential exposure allowing unauthorized access.",
+                "severity": "LOW"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                21,
+                25
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "91360542-c2be-4556-ae87-3d62d4988662",
+            "rule_id": "SECRET_GENERIC_SECRET",
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "database/create_sqlite_db.sql",
+            "line": 25,
+            "column": null,
+            "description": "Potential secret pattern matched: generic_secret",
+            "cvss": 0.47,
+            "detector": "SecretDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "SETUP",
+                "detector_severity": "LOW",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 0.5,
+                "original_cvss": 7.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-798"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.7",
+                        "title": "Data Transmission Protection",
+                        "description": "Protect against unauthorized data disclosure in transit."
+                    },
+                    {
+                        "id": "C1.1",
+                        "title": "Confidentiality Identification",
+                        "description": "Identify and maintain confidentiality of information."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.11",
+                        "title": "Encrypt Sensitive Data at Rest",
+                        "description": "Encrypt sensitive data stored on systems."
+                    },
+                    {
+                        "id": "CIS-4.7",
+                        "title": "Manage Default Accounts",
+                        "description": "Manage default accounts on enterprise assets."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.5.17",
+                        "title": "Authentication Information",
+                        "description": "Manage authentication credentials securely."
+                    },
+                    {
+                        "id": "A.8.12",
+                        "title": "Data Leakage Prevention",
+                        "description": "Prevent unauthorized disclosure of sensitive data."
+                    },
+                    {
+                        "id": "A.8.24",
+                        "title": "Use of Cryptography",
+                        "description": "Define and implement rules for cryptographic controls."
+                    }
+                ],
+                "risk_note": "Credential exposure allowing unauthorized access.",
+                "severity": "LOW"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                21,
+                25
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "95666609-c29d-4db0-ba91-f116a1bb7d86",
+            "rule_id": "SECRET_GENERIC_SECRET",
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "database/create_postgresql_db.sql",
+            "line": 3,
+            "column": null,
+            "description": "Potential secret pattern matched: generic_secret",
+            "cvss": 0.47,
+            "detector": "SecretDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "SETUP",
+                "detector_severity": "LOW",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 0.5,
+                "original_cvss": 7.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-798"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.7",
+                        "title": "Data Transmission Protection",
+                        "description": "Protect against unauthorized data disclosure in transit."
+                    },
+                    {
+                        "id": "C1.1",
+                        "title": "Confidentiality Identification",
+                        "description": "Identify and maintain confidentiality of information."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.11",
+                        "title": "Encrypt Sensitive Data at Rest",
+                        "description": "Encrypt sensitive data stored on systems."
+                    },
+                    {
+                        "id": "CIS-4.7",
+                        "title": "Manage Default Accounts",
+                        "description": "Manage default accounts on enterprise assets."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.5.17",
+                        "title": "Authentication Information",
+                        "description": "Manage authentication credentials securely."
+                    },
+                    {
+                        "id": "A.8.12",
+                        "title": "Data Leakage Prevention",
+                        "description": "Prevent unauthorized disclosure of sensitive data."
+                    },
+                    {
+                        "id": "A.8.24",
+                        "title": "Use of Cryptography",
+                        "description": "Define and implement rules for cryptographic controls."
+                    }
+                ],
+                "risk_note": "Credential exposure allowing unauthorized access.",
+                "severity": "LOW"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                3
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "f05b1fe3-ad79-4161-ae76-9a91932b2333",
+            "rule_id": "SECRET_GENERIC_SECRET",
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "database/create_oracle_db.sql",
+            "line": 21,
+            "column": null,
+            "description": "Potential secret pattern matched: generic_secret",
+            "cvss": 0.47,
+            "detector": "SecretDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "SETUP",
+                "detector_severity": "LOW",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 0.5,
+                "original_cvss": 7.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-798"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.7",
+                        "title": "Data Transmission Protection",
+                        "description": "Protect against unauthorized data disclosure in transit."
+                    },
+                    {
+                        "id": "C1.1",
+                        "title": "Confidentiality Identification",
+                        "description": "Identify and maintain confidentiality of information."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.11",
+                        "title": "Encrypt Sensitive Data at Rest",
+                        "description": "Encrypt sensitive data stored on systems."
+                    },
+                    {
+                        "id": "CIS-4.7",
+                        "title": "Manage Default Accounts",
+                        "description": "Manage default accounts on enterprise assets."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.5.17",
+                        "title": "Authentication Information",
+                        "description": "Manage authentication credentials securely."
+                    },
+                    {
+                        "id": "A.8.12",
+                        "title": "Data Leakage Prevention",
+                        "description": "Prevent unauthorized disclosure of sensitive data."
+                    },
+                    {
+                        "id": "A.8.24",
+                        "title": "Use of Cryptography",
+                        "description": "Define and implement rules for cryptographic controls."
+                    }
+                ],
+                "risk_note": "Credential exposure allowing unauthorized access.",
+                "severity": "LOW"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                21,
+                25
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "bc7495ae-224a-429c-871f-554c554a1a97",
+            "rule_id": "SECRET_GENERIC_SECRET",
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "database/create_oracle_db.sql",
+            "line": 25,
+            "column": null,
+            "description": "Potential secret pattern matched: generic_secret",
+            "cvss": 0.47,
+            "detector": "SecretDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "SETUP",
+                "detector_severity": "LOW",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 0.5,
+                "original_cvss": 7.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-798"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.7",
+                        "title": "Data Transmission Protection",
+                        "description": "Protect against unauthorized data disclosure in transit."
+                    },
+                    {
+                        "id": "C1.1",
+                        "title": "Confidentiality Identification",
+                        "description": "Identify and maintain confidentiality of information."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.11",
+                        "title": "Encrypt Sensitive Data at Rest",
+                        "description": "Encrypt sensitive data stored on systems."
+                    },
+                    {
+                        "id": "CIS-4.7",
+                        "title": "Manage Default Accounts",
+                        "description": "Manage default accounts on enterprise assets."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.5.17",
+                        "title": "Authentication Information",
+                        "description": "Manage authentication credentials securely."
+                    },
+                    {
+                        "id": "A.8.12",
+                        "title": "Data Leakage Prevention",
+                        "description": "Prevent unauthorized disclosure of sensitive data."
+                    },
+                    {
+                        "id": "A.8.24",
+                        "title": "Use of Cryptography",
+                        "description": "Define and implement rules for cryptographic controls."
+                    }
+                ],
+                "risk_note": "Credential exposure allowing unauthorized access.",
+                "severity": "LOW"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                21,
+                25
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "04bedcd2-b0ae-4c9e-8cb7-8ddd5230437b",
+            "rule_id": "SECRET_GENERIC_SECRET",
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "vulnerabilities/sqli/test.php",
+            "line": 4,
+            "column": null,
+            "description": "Potential secret pattern matched: generic_secret",
+            "cvss": 0.12,
+            "detector": "SecretDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "TEST",
+                "detector_severity": "LOW",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 0.5,
+                "original_cvss": 7.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-798"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.7",
+                        "title": "Data Transmission Protection",
+                        "description": "Protect against unauthorized data disclosure in transit."
+                    },
+                    {
+                        "id": "C1.1",
+                        "title": "Confidentiality Identification",
+                        "description": "Identify and maintain confidentiality of information."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.11",
+                        "title": "Encrypt Sensitive Data at Rest",
+                        "description": "Encrypt sensitive data stored on systems."
+                    },
+                    {
+                        "id": "CIS-4.7",
+                        "title": "Manage Default Accounts",
+                        "description": "Manage default accounts on enterprise assets."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.5.17",
+                        "title": "Authentication Information",
+                        "description": "Manage authentication credentials securely."
+                    },
+                    {
+                        "id": "A.8.12",
+                        "title": "Data Leakage Prevention",
+                        "description": "Prevent unauthorized disclosure of sensitive data."
+                    },
+                    {
+                        "id": "A.8.24",
+                        "title": "Use of Cryptography",
+                        "description": "Define and implement rules for cryptographic controls."
+                    }
+                ],
+                "risk_note": "Credential exposure allowing unauthorized access.",
+                "severity": "LOW"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                4
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "b75ff037-ffd1-4aaf-aa0a-41515dcb00b4",
+            "rule_id": "BANDIT_B101",
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "tests/test_url.py",
+            "line": 124,
+            "column": null,
+            "description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "cvss": 0.0,
+            "detector": "BanditDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "STATIC_SAFE",
+            "meta": {
+                "code": "123 \n124     assert len(broken_urls) == 0, \"Broken URLs Detected.\"",
+                "test_id": "B101",
+                "context_label": "NON_RUNTIME",
+                "detector_severity": "LOW",
+                "_source_code_snippet": "",
+                "taint_result": "STATIC_SAFE",
+                "trust_factor": 0.5,
+                "original_cvss": 2.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.3",
+                        "title": "Configure Data Access Control Lists",
+                        "description": "Restrict access to sensitive data via ACLs."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.4",
+                        "title": "Access to Source Code",
+                        "description": "Restrict and monitor access to source code."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Unauthorized file system access via path traversal.",
+                "severity": "LOW"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                124
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "3abd2540-94de-4879-bb34-33525f1e3ad6",
+            "rule_id": "generic-api-key",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": true,
+            "disclaimer": "Automated advisory based on validation matrix. Manual review recommended.",
+            "file_path": "vulnerabilities/csrf/help/help.php",
+            "line": 54,
+            "column": 7,
+            "description": "SECRET EXPOSURE: Generic API Key identified.",
+            "cvss": 1.51,
+            "detector": "GitleaksDetector",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "offending_line": "",
+                "commit": "",
+                "fingerprint": "/tmp/DVWA/vulnerabilities/csrf/help/help.php:generic-api-key:54",
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 0.35,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN",
+                "chain_id": "CHAIN_0003",
+                "chain_risk": "CRITICAL",
+                "chain_rule": "secret_to_command_injection",
+                "chain_original_severity": "CRITICAL"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.1",
+                        "title": "Logical and Physical Access Controls",
+                        "description": "Restrict logical access to systems and data."
+                    },
+                    {
+                        "id": "CC6.7",
+                        "title": "Data Transmission Protection",
+                        "description": "Protect against unauthorized data disclosure in transit."
+                    },
+                    {
+                        "id": "C1.1",
+                        "title": "Confidentiality Identification",
+                        "description": "Identify and maintain confidentiality of information."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-3.11",
+                        "title": "Encrypt Sensitive Data at Rest",
+                        "description": "Encrypt sensitive data stored on systems."
+                    },
+                    {
+                        "id": "CIS-4.7",
+                        "title": "Manage Default Accounts",
+                        "description": "Manage default accounts on enterprise assets."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.5.17",
+                        "title": "Authentication Information",
+                        "description": "Manage authentication credentials securely."
+                    },
+                    {
+                        "id": "A.8.12",
+                        "title": "Data Leakage Prevention",
+                        "description": "Prevent unauthorized disclosure of sensitive data."
+                    },
+                    {
+                        "id": "A.8.24",
+                        "title": "Use of Cryptography",
+                        "description": "Define and implement rules for cryptographic controls."
+                    }
+                ],
+                "risk_note": "Credential exposure allowing unauthorized access.",
+                "severity": "CRITICAL"
+            },
+            "chain": {
+                "id": "CHAIN_0003",
+                "risk": "CRITICAL",
+                "rule": "secret_to_command_injection",
+                "partner_finding_id": ""
+            },
+            "ai_advisory": {
+                "finding_id": "3abd2540-94de-4879-bb34-33525f1e3ad6",
+                "verdict": "SUPPORTED",
+                "reasoning": "The provided code snippet appears to be a part of a web application, specifically a change password form. The 'user-token' header contains a hardcoded token, which could be used as an API key. In the context of the 'secret_to_command_injection' chain, this token could potentially be used to exploit a command injection vulnerability. The chain context indicates that this finding is part of a vulnerability chain, which escalates the risk to CRITICAL. As the Trigger of the chain, this hardcoded token could be used to gain unauthorized access to the system, potentially leading to command injection attacks.",
+                "confidence": 75,
+                "exploit_chain": {
+                    "source": "user-token header",
+                    "sink": "command injection vulnerability"
+                },
+                "remediation": "Remove the hardcoded 'user-token' and instead use a secure method to generate and store tokens, such as using a secure random number generator and storing the token in a secure storage mechanism, like a Hardware Security Module (HSM) or a secure cookie.",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "user-token",
+                "intel_reason": "No direct external data found, deep analysis required for 'user-token'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained. [Chain CHAIN_0003 context applied — confidence boosted.]",
+                "type": "advisory"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                54
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "7edd750a-a267-4ccf-83d0-d2a16c1702f1",
+            "rule_id": "GHA_UNPINNED_ACTION",
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": ".github/workflows/vulnerable.yml",
+            "line": 1,
+            "column": null,
+            "description": "Unpinned action 'actions/checkout@v6.0.2'. Use a full SHA hash to prevent supply chain attacks.",
+            "cvss": 0.89,
+            "detector": "cicd_analyzer",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "INFRA",
+                "detector_severity": "MEDIUM",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 0.5,
+                "original_cvss": 5.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Security finding requires manual review and classification.",
+                "severity": "MEDIUM"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                1
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "0d638317-d9d7-4f9c-849d-7c532b69463c",
+            "rule_id": "GHA_UNPINNED_ACTION",
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": ".github/workflows/shiftleft-analysis.yml",
+            "line": 1,
+            "column": null,
+            "description": "Unpinned action 'actions/checkout@v6.0.2'. Use a full SHA hash to prevent supply chain attacks.",
+            "cvss": 0.89,
+            "detector": "cicd_analyzer",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "INFRA",
+                "detector_severity": "MEDIUM",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 0.5,
+                "original_cvss": 5.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Security finding requires manual review and classification.",
+                "severity": "MEDIUM"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                1
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "2637b16d-64a4-457d-8444-e86d3e57fb7d",
+            "rule_id": "GHA_UNPINNED_ACTION",
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": ".github/workflows/codeql-analysis.yml",
+            "line": 1,
+            "column": null,
+            "description": "Unpinned action 'actions/checkout@v6.0.2'. Use a full SHA hash to prevent supply chain attacks.",
+            "cvss": 0.89,
+            "detector": "cicd_analyzer",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "INFRA",
+                "detector_severity": "MEDIUM",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 0.5,
+                "original_cvss": 5.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Security finding requires manual review and classification.",
+                "severity": "MEDIUM"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                1
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "999d017f-0ceb-4d95-bb7c-2ae6e1e9268e",
+            "rule_id": "GHA_UNPINNED_ACTION",
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": ".github/workflows/pytest.yml",
+            "line": 1,
+            "column": null,
+            "description": "Unpinned action 'actions/checkout@v6.0.2'. Use a full SHA hash to prevent supply chain attacks.",
+            "cvss": 0.89,
+            "detector": "cicd_analyzer",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "INFRA",
+                "detector_severity": "MEDIUM",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 0.5,
+                "original_cvss": 5.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Security finding requires manual review and classification.",
+                "severity": "MEDIUM"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                1
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "d231fda4-78d3-4d7f-8ad3-cb2c406d0c34",
+            "rule_id": "GHA_UNPINNED_ACTION",
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": ".github/workflows/docker-image.yml",
+            "line": 1,
+            "column": null,
+            "description": "Unpinned action 'actions/checkout@v6.0.2'. Use a full SHA hash to prevent supply chain attacks.",
+            "cvss": 0.89,
+            "detector": "cicd_analyzer",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "INFRA",
+                "detector_severity": "MEDIUM",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 0.5,
+                "original_cvss": 5.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Security finding requires manual review and classification.",
+                "severity": "MEDIUM"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                1
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "4e5ea063-d431-40fd-b95b-acdb630e44e2",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/view_help.php",
+            "line": 20,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78",
+                "chain_id": "CHAIN_0003",
+                "chain_risk": "CRITICAL",
+                "chain_rule": "secret_to_command_injection",
+                "chain_original_severity": "CRITICAL"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "chain": {
+                "id": "CHAIN_0003",
+                "risk": "CRITICAL",
+                "rule": "secret_to_command_injection",
+                "partner_finding_id": ""
+            },
+            "ai_advisory": {
+                "finding_id": "4e5ea063-d431-40fd-b95b-acdb630e44e2",
+                "verdict": "SUPPORTED",
+                "reasoning": "The code is vulnerable to command injection due to the use of the `eval` function with user-controlled input from the `$_GET['locale']` variable. This allows an attacker to inject malicious PHP code. The chain context indicates that this finding is part of a vulnerability chain, which increases the exploitability of the issue.",
+                "confidence": 75,
+                "exploit_chain": {
+                    "source": "user input",
+                    "sink": "eval function"
+                },
+                "remediation": "To fix this issue, use a whitelist approach to validate the `locale` variable and avoid using `eval` with user-controlled input. Instead, use a secure template engine or a parameterized query to prevent code injection.",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained. [Chain CHAIN_0003 context applied — confidence boosted.]",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                20,
+                22
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "fd596de4-3171-42b6-85a6-4bf3c4526dff",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/view_help.php",
+            "line": 22,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78",
+                "chain_id": "CHAIN_0003",
+                "chain_risk": "CRITICAL",
+                "chain_rule": "secret_to_command_injection",
+                "chain_original_severity": "CRITICAL"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "chain": {
+                "id": "CHAIN_0003",
+                "risk": "CRITICAL",
+                "rule": "secret_to_command_injection",
+                "partner_finding_id": ""
+            },
+            "ai_advisory": {
+                "finding_id": "fd596de4-3171-42b6-85a6-4bf3c4526dff",
+                "verdict": "SUPPORTED",
+                "reasoning": "This finding is similar to the previous one, with the same vulnerability and chain context. The use of `eval` with user-controlled input from the `$_GET['locale']` variable makes the code vulnerable to command injection. The chain context indicates that this finding is part of a vulnerability chain, which increases the exploitability of the issue.",
+                "confidence": 75,
+                "exploit_chain": {
+                    "source": "user input",
+                    "sink": "eval function"
+                },
+                "remediation": "To fix this issue, use a whitelist approach to validate the `locale` variable and avoid using `eval` with user-controlled input. Instead, use a secure template engine or a parameterized query to prevent code injection.",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained. [Chain CHAIN_0003 context applied — confidence boosted.]",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                20,
+                22
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "a6d7ccdf-66de-41b5-bbd5-39f5bd7fce64",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/api/source/medium.php",
+            "line": 14,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                14,
+                25
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "4459c01a-5740-41f1-8d90-e226f802d998",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/api/source/medium.php",
+            "line": 25,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                14,
+                25
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "6f582ae0-4c46-44df-a0a6-214170cdefcf",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/api/source/low.php",
+            "line": 26,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                26,
+                34,
+                81,
+                94
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "b51b73d0-e93b-4ee0-a19f-f40152be89ca",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/api/source/low.php",
+            "line": 34,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                26,
+                34,
+                81,
+                94
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "15484f43-4a0d-4392-ac90-29c4f78fb56e",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/api/source/low.php",
+            "line": 81,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                26,
+                34,
+                81,
+                94
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "25ee443f-7a5a-4b48-af3c-4365e2b3b929",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/api/source/low.php",
+            "line": 94,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                26,
+                34,
+                81,
+                94
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "3abe8591-a678-4dd1-b4e3-a7bf134fec59",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/impossible.php",
+            "line": 22,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "3abe8591-a678-4dd1-b4e3-a7bf134fec59",
+                "verdict": "SUPPORTED",
+                "reasoning": "The code is vulnerable to command injection because the $target variable is directly concatenated into the shell_exec command without any sanitization or validation. This allows an attacker to inject malicious commands, potentially leading to arbitrary code execution.",
+                "confidence": 90,
+                "exploit_chain": {
+                    "source": "$target",
+                    "sink": "shell_exec"
+                },
+                "remediation": "Use escapeshellarg() to sanitize the $target variable before passing it to shell_exec. For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                22,
+                26
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "410b9db3-b60a-4967-9d00-41d03635c062",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/impossible.php",
+            "line": 26,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "410b9db3-b60a-4967-9d00-41d03635c062",
+                "verdict": "SUPPORTED",
+                "reasoning": "The code is vulnerable to command injection because the $target variable is directly concatenated into the shell_exec command without any sanitization or validation. This allows an attacker to inject malicious commands, potentially leading to arbitrary code execution.",
+                "confidence": 90,
+                "exploit_chain": {
+                    "source": "$target",
+                    "sink": "shell_exec"
+                },
+                "remediation": "Use escapeshellarg() to sanitize the $target variable before passing it to shell_exec. For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                22,
+                26
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "264d8d1b-31dd-4e09-9377-ce12a9816b73",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/high.php",
+            "line": 26,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78",
+                "chain_id": "CHAIN_0003",
+                "chain_risk": "CRITICAL",
+                "chain_rule": "secret_to_command_injection",
+                "chain_original_severity": "CRITICAL"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "chain": {
+                "id": "CHAIN_0003",
+                "risk": "CRITICAL",
+                "rule": "secret_to_command_injection",
+                "partner_finding_id": ""
+            },
+            "ai_advisory": {
+                "finding_id": "264d8d1b-31dd-4e09-9377-ce12a9816b73",
+                "verdict": "SUPPORTED",
+                "reasoning": "The code is vulnerable to command injection because it directly executes the 'ping' command with user-controlled input ($target) without proper sanitization or validation. This allows an attacker to inject malicious commands, potentially leading to arbitrary code execution. The chain context (CHAIN_0003) indicates that this finding is part of a vulnerability chain, where a hardcoded secret is used to enable command injection, further increasing the exploitability.",
+                "confidence": 75,
+                "exploit_chain": {
+                    "source": "Hardcoded Secret",
+                    "sink": "Command Injection"
+                },
+                "remediation": "To fix this vulnerability, use parameterized commands or escape the user-controlled input using escapeshellarg() function. For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained. [Chain CHAIN_0003 context applied — confidence boosted.]",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                26,
+                30
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "db67d371-e6fe-43f1-8410-697fee173302",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/high.php",
+            "line": 30,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "db67d371-e6fe-43f1-8410-697fee173302",
+                "verdict": "SUPPORTED",
+                "reasoning": "This finding is a duplicate of the previous one, with the same vulnerability and chain context. The code is still vulnerable to command injection, and the chain context indicates that it is part of a vulnerability chain. The bridge logic is that the output of the first finding (the hardcoded secret) becomes the controlled input for the second finding (the command injection), allowing an attacker to inject malicious commands.",
+                "confidence": 90,
+                "exploit_chain": {
+                    "source": "Hardcoded Secret",
+                    "sink": "Command Injection"
+                },
+                "remediation": "To fix this vulnerability, use parameterized commands or escape the user-controlled input using escapeshellarg() function. For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                26,
+                30
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "d645b04a-69e8-4039-ad09-c3804f47bc96",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/medium.php",
+            "line": 19,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "d645b04a-69e8-4039-ad09-c3804f47bc96",
+                "verdict": "SUPPORTED",
+                "reasoning": "The code is vulnerable to command injection because it directly executes the 'ping' command with user-controlled input ($target) without proper sanitization or validation. An attacker could inject malicious commands by manipulating the $target variable.",
+                "confidence": 90,
+                "exploit_chain": {
+                    "source": "$target",
+                    "sink": "shell_exec()"
+                },
+                "remediation": "Use escapeshellarg() to sanitize the $target variable before passing it to the shell_exec() function. For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                19,
+                23
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "2a2bc67a-84ba-43cb-bf53-4b007a704eb8",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/medium.php",
+            "line": 23,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "2a2bc67a-84ba-43cb-bf53-4b007a704eb8",
+                "verdict": "SUPPORTED",
+                "reasoning": "The code is vulnerable to command injection because it directly executes the 'ping' command with user-controlled input ($target) without proper sanitization or validation. An attacker could inject malicious commands by manipulating the $target variable.",
+                "confidence": 90,
+                "exploit_chain": {
+                    "source": "$target",
+                    "sink": "shell_exec()"
+                },
+                "remediation": "Use escapeshellarg() to sanitize the $target variable before passing it to the shell_exec() function. For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                19,
+                23
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "94b83156-653e-4b83-b145-d904db5b6d3a",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/low.php",
+            "line": 10,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "94b83156-653e-4b83-b145-d904db5b6d3a",
+                "verdict": "SUPPORTED",
+                "reasoning": "The code is vulnerable to command injection because it directly executes the 'ping' command with user-controlled input ($target) using shell_exec(). This allows an attacker to inject malicious commands, potentially leading to arbitrary code execution. The lack of input validation or sanitization makes this a critical vulnerability.",
+                "confidence": 100,
+                "exploit_chain": {
+                    "source": "$target",
+                    "sink": "shell_exec()"
+                },
+                "remediation": "To fix this vulnerability, use escapeshellarg() to properly escape the $target variable before passing it to shell_exec(). For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                10,
+                14
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "033077f3-ed2a-453c-8222-396d27a73651",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/exec/source/low.php",
+            "line": 14,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "033077f3-ed2a-453c-8222-396d27a73651",
+                "verdict": "SUPPORTED",
+                "reasoning": "This finding is similar to the previous one, with the same vulnerability and attack vector. The code is still vulnerable to command injection due to the direct execution of the 'ping' command with user-controlled input ($target) using shell_exec().",
+                "confidence": 100,
+                "exploit_chain": {
+                    "source": "$target",
+                    "sink": "shell_exec()"
+                },
+                "remediation": "To fix this vulnerability, use escapeshellarg() to properly escape the $target variable before passing it to shell_exec(). For example: $cmd = shell_exec('ping ' . escapeshellarg($target));",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                10,
+                14
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "55188b77-c7a4-4001-a53c-79701225aca6",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/authbypass/authbypass.js",
+            "line": 43,
+            "column": null,
+            "description": "Potential xss detected in javascript code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                43,
+                45,
+                47,
+                49
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "3fd1d0f1-52a4-488f-8b45-cdb7450d007f",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/authbypass/authbypass.js",
+            "line": 45,
+            "column": null,
+            "description": "Potential xss detected in javascript code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                43,
+                45,
+                47,
+                49
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "4a16d789-d03c-4e95-9c92-be0e152f2571",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/authbypass/authbypass.js",
+            "line": 47,
+            "column": null,
+            "description": "Potential xss detected in javascript code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                43,
+                45,
+                47,
+                49
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "af22597a-2953-430c-af27-709223de3018",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/authbypass/authbypass.js",
+            "line": 49,
+            "column": null,
+            "description": "Potential xss detected in javascript code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 4,
+            "instance_lines": [
+                43,
+                45,
+                47,
+                49
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "1a2b74a6-b8fe-446c-872c-f1a6c11f3cf1",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/xss_d/index.php",
+            "line": 53,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 6,
+            "instance_lines": [
+                53,
+                54,
+                57,
+                58,
+                59,
+                60
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "a35c5f3e-7b99-4487-9e67-c7ff14cf1cdf",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/xss_d/index.php",
+            "line": 54,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 6,
+            "instance_lines": [
+                53,
+                54,
+                57,
+                58,
+                59,
+                60
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "f5267459-84c4-445b-91f8-4894e177113b",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/xss_d/index.php",
+            "line": 57,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 6,
+            "instance_lines": [
+                53,
+                54,
+                57,
+                58,
+                59,
+                60
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "c6c309da-ad7f-48be-bc21-f442f6014494",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/xss_d/index.php",
+            "line": 58,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 6,
+            "instance_lines": [
+                53,
+                54,
+                57,
+                58,
+                59,
+                60
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "7a0951f7-b6bc-4c06-a7e4-3f1fd3b9c652",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/xss_d/index.php",
+            "line": 59,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 6,
+            "instance_lines": [
+                53,
+                54,
+                57,
+                58,
+                59,
+                60
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "7e2f6aaa-f046-4764-9333-81b4c1a8d82b",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/xss_d/index.php",
+            "line": 60,
+            "column": null,
+            "description": "Potential xss detected in php code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 6,
+            "instance_lines": [
+                53,
+                54,
+                57,
+                58,
+                59,
+                60
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "52b56a9c-c8ee-4b4d-bc68-50025fe822c7",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/javascript/source/high.js",
+            "line": 1,
+            "column": null,
+            "description": "Potential command injection detected in javascript code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "52b56a9c-c8ee-4b4d-bc68-50025fe822c7",
+                "verdict": "NOT_SUPPORTED",
+                "reasoning": "The provided code is heavily obfuscated and does not clearly demonstrate a command injection vulnerability. The code appears to be implementing a SHA-256 hash function, and there is no clear indication of user input being used to construct a command. Without further context or a clear example of how user input is being used, it is difficult to determine the validity of this finding.",
+                "confidence": 0,
+                "exploit_chain": {
+                    "source": "",
+                    "sink": ""
+                },
+                "remediation": "",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "a",
+                "intel_reason": "No direct external data found, deep analysis required for 'a'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                1
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "791cee88-f27b-4060-9a0a-769bed3b9e79",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/javascript/source/high_unobfuscated.js",
+            "line": 83,
+            "column": null,
+            "description": "Potential command injection detected in javascript code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "791cee88-f27b-4060-9a0a-769bed3b9e79",
+                "verdict": "NOT_SUPPORTED",
+                "reasoning": "The provided code does not demonstrate a command injection vulnerability. The code is using the `crypto` module to create a hash, and the `eval` function is used to require the `crypto` and `buffer` modules. However, there is no clear indication of user input being used to construct a command. The code appears to be a Node.js implementation of a SHA-224 or SHA-256 hash function, and the use of `eval` is not necessarily a security risk in this context.",
+                "confidence": 0,
+                "exploit_chain": {
+                    "source": "",
+                    "sink": ""
+                },
+                "remediation": "",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "crypto",
+                "intel_reason": "No direct external data found, deep analysis required for 'crypto'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                83,
+                84
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "d1a2b392-8c13-47fe-8f64-a1027a0af0cb",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/javascript/source/high_unobfuscated.js",
+            "line": 84,
+            "column": null,
+            "description": "Potential command injection detected in javascript code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "ai_advisory": {
+                "finding_id": "d1a2b392-8c13-47fe-8f64-a1027a0af0cb",
+                "verdict": "NOT_SUPPORTED",
+                "reasoning": "The provided code does not contain any user-controlled input that could lead to command injection. The 'message' variable is checked for its type and handled accordingly, but there is no indication that it comes from an untrusted source. Additionally, the 'crypto.createHash' function is used with a fixed algorithm, which does not allow for command injection.",
+                "confidence": 100,
+                "exploit_chain": {
+                    "source": "",
+                    "sink": ""
+                },
+                "remediation": "",
+                "intel_reachability": "POTENTIALLY_REACHABLE",
+                "intel_taint_sources": [],
+                "intel_func_name": "Buffer",
+                "intel_reason": "Entity 'Buffer' is public and accessible via external call.",
+                "verification_note": "AGREED SAFE: AI and static analysis both indicate no exploitable path in 'Buffer'.",
+                "type": "advisory"
+            },
+            "instance_count": 2,
+            "instance_lines": [
+                83,
+                84
+            ],
+            "is_duplicate_instance": true
+        },
+        {
+            "id": "8aa067fd-4588-4bab-a6ce-dd5b1b1ffd56",
+            "rule_id": "SAST_COMMAND_INJECTION",
+            "severity": "CRITICAL",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/cryptography/source/oracle_attack.php",
+            "line": 57,
+            "column": null,
+            "description": "Potential command injection detected in php code.",
+            "cvss": 8.16,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "REACHABLE",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "CRITICAL",
+                "_source_code_snippet": "",
+                "taint_result": "REACHABLE",
+                "trust_factor": 1.0,
+                "original_cvss": 9.0,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-78",
+                "chain_id": "CHAIN_0003",
+                "chain_risk": "CRITICAL",
+                "chain_rule": "secret_to_command_injection",
+                "chain_original_severity": "CRITICAL"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    },
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-7.5",
+                        "title": "Perform Automated Vulnerability Scans",
+                        "description": "Perform automated application vulnerability scans."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    },
+                    {
+                        "id": "A.8.29",
+                        "title": "Security Testing in Development and Acceptance",
+                        "description": "Define and implement security testing processes."
+                    }
+                ],
+                "risk_note": "Remote code execution via unsanitized shell command.",
+                "severity": "CRITICAL"
+            },
+            "chain": {
+                "id": "CHAIN_0003",
+                "risk": "CRITICAL",
+                "rule": "secret_to_command_injection",
+                "partner_finding_id": ""
+            },
+            "ai_advisory": {
+                "finding_id": "8aa067fd-4588-4bab-a6ce-dd5b1b1ffd56",
+                "verdict": "SUPPORTED",
+                "reasoning": "The provided code is part of a vulnerability chain (CHAIN_0003) with a critical risk. The 'curl_exec' function is used to execute a curl request, and the '$url' variable is not sanitized. If an attacker can control the '$url' variable, they could inject malicious commands. The bridge logic is that the output of the first finding (e.g., a hardcoded secret) could be used as input to the 'curl_exec' function, allowing an attacker to inject malicious commands.",
+                "confidence": 75,
+                "exploit_chain": {
+                    "source": "hardcoded secret",
+                    "sink": "curl_exec"
+                },
+                "remediation": "Use a parameterized curl request or sanitize the '$url' variable to prevent command injection. For example, use 'curl_setopt($ch, CURLOPT_URL, curl_escape($url));' to escape the URL.",
+                "intel_reachability": "UNKNOWN",
+                "intel_taint_sources": [],
+                "intel_func_name": "unknown_block",
+                "intel_reason": "No direct external data found, deep analysis required for 'unknown_block'.",
+                "verification_note": "INCONCLUSIVE: Static engine lacked sufficient context. AI verdict retained. [Chain CHAIN_0003 context applied — confidence boosted.]",
+                "type": "advisory"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                57
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "2711afb0-1adf-4d83-9ea1-bf8b885c87c1",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/csp/source/high.js",
+            "line": 9,
+            "column": null,
+            "description": "Potential xss detected in javascript code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                9
+            ],
+            "is_duplicate_instance": false
+        },
+        {
+            "id": "d2c8906d-c64d-4e68-8f3e-26b3d00233c9",
+            "rule_id": "SAST_XSS",
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": "CWE-UNKNOWN",
+            "risk_category": "UNCLASSIFIED",
+            "impact": "Unclassified Risk",
+            "is_automated_advisory": false,
+            "disclaimer": null,
+            "file_path": "vulnerabilities/csp/source/impossible.js",
+            "line": 9,
+            "column": null,
+            "description": "Potential xss detected in javascript code.",
+            "cvss": 5.1,
+            "detector": "SastScanner",
+            "evidence_strength": "standard",
+            "validation_state": "UNVALIDATED",
+            "reach_status": "UNKNOWN",
+            "meta": {
+                "context_label": "PRODUCTION",
+                "detector_severity": "HIGH",
+                "_source_code_snippet": "",
+                "taint_result": "UNKNOWN",
+                "trust_factor": 1.0,
+                "original_cvss": 7.5,
+                "hard_fail_triggered": false,
+                "cwe": "CWE-UNKNOWN"
+            },
+            "compliance_mapping": {
+                "soc2": [
+                    {
+                        "id": "CC6.6",
+                        "title": "External Threat Mitigation",
+                        "description": "Prevent and detect threats from external sources."
+                    },
+                    {
+                        "id": "CC7.1",
+                        "title": "Vulnerability Detection",
+                        "description": "Detect and monitor vulnerabilities in system components."
+                    }
+                ],
+                "cis": [
+                    {
+                        "id": "CIS-16.12",
+                        "title": "Implement Code-Level Security Checks",
+                        "description": "Implement static and dynamic code security checks."
+                    },
+                    {
+                        "id": "CIS-16.1",
+                        "title": "Establish Secure Application Development Process",
+                        "description": "Establish and maintain a secure SDLC process."
+                    }
+                ],
+                "iso27001": [
+                    {
+                        "id": "A.8.28",
+                        "title": "Secure Coding",
+                        "description": "Apply secure coding principles to software development."
+                    },
+                    {
+                        "id": "A.8.26",
+                        "title": "Application Security Requirements",
+                        "description": "Identify and approve information security requirements."
+                    }
+                ],
+                "risk_note": "Client-side code injection enabling session hijacking.",
+                "severity": "HIGH"
+            },
+            "instance_count": 1,
+            "instance_lines": [
+                9
+            ],
+            "is_duplicate_instance": false
+        }
+    ],
+    "framework_summary": {
+        "soc2_controls": [
+            {
+                "id": "CC7.1",
+                "title": "Vulnerability Detection",
+                "count": 37
+            },
+            {
+                "id": "CC6.6",
+                "title": "External Threat Mitigation",
+                "count": 33
+            },
+            {
+                "id": "CC6.1",
+                "title": "Logical and Physical Access Controls",
+                "count": 8
+            },
+            {
+                "id": "CC6.7",
+                "title": "Data Transmission Protection",
+                "count": 7
+            },
+            {
+                "id": "C1.1",
+                "title": "Confidentiality Identification",
+                "count": 7
+            }
+        ],
+        "cis_controls": [
+            {
+                "id": "CIS-16.1",
+                "title": "Establish Secure Application Development Process",
+                "count": 39
+            },
+            {
+                "id": "CIS-16.12",
+                "title": "Implement Code-Level Security Checks",
+                "count": 38
+            },
+            {
+                "id": "CIS-7.5",
+                "title": "Perform Automated Vulnerability Scans",
+                "count": 14
+            },
+            {
+                "id": "CIS-3.11",
+                "title": "Encrypt Sensitive Data at Rest",
+                "count": 7
+            },
+            {
+                "id": "CIS-4.7",
+                "title": "Manage Default Accounts",
+                "count": 7
+            },
+            {
+                "id": "CIS-3.3",
+                "title": "Configure Data Access Control Lists",
+                "count": 1
+            }
+        ],
+        "iso27001_controls": [
+            {
+                "id": "A.8.26",
+                "title": "Application Security Requirements",
+                "count": 33
+            },
+            {
+                "id": "A.8.28",
+                "title": "Secure Coding",
+                "count": 32
+            },
+            {
+                "id": "A.8.29",
+                "title": "Security Testing in Development and Acceptance",
+                "count": 19
+            },
+            {
+                "id": "A.5.17",
+                "title": "Authentication Information",
+                "count": 7
+            },
+            {
+                "id": "A.8.12",
+                "title": "Data Leakage Prevention",
+                "count": 7
+            },
+            {
+                "id": "A.8.24",
+                "title": "Use of Cryptography",
+                "count": 7
+            },
+            {
+                "id": "A.8.4",
+                "title": "Access to Source Code",
+                "count": 1
+            }
+        ],
+        "total_soc2_criteria_triggered": 5,
+        "total_cis_safeguards_triggered": 6,
+        "total_iso_controls_triggered": 7
+    }
+}
